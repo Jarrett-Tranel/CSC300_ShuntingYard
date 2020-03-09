@@ -1,39 +1,23 @@
-#include<iostream>
-#include<string.h>
+#include <string.h>
+#include <iostream>
+
+#include "StringFactory.hpp"
 using namespace std;
 
-//#WeLoveSingletons
-
-//How does a penguin build a house???
-
-char str[] = "14682 + 75223 * 32 - 84 / 12";
-string arr[50];
-int x = 0;
-
-void splinator()
-{
-
-    char delims[] = "+-*/ ";
-    char* tempString;
-    tempString = strtok(str, delims);
-    do
-    {
-        arr[x] = tempString;
-        x++;
-        tempString = strtok(NULL, " ");
-    } while (tempString);
-    
-
-}
+//Wanna hear a joke about construction?
 
 int main()
 {
-    splinator();
-    for(int i = 0; i<x; i++)
-    {
-        cout<<arr[i]<<"\n"; 
-    }
+    char s[] = "428 + 12 - 67 / 862 - 5 + 42";
+    char* delims = " ";
+    
+
+    LinkedList* ll = new LinkedList();
+
+    StringFactory::split(ll, s, delims);
+  
+    ll->display();
+  
 }
 
-
-//Igloos it together ;)
+//Sorry, I'm still working on it...
