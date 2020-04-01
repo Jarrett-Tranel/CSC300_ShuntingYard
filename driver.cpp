@@ -1,23 +1,22 @@
 #include <string.h>
 #include <iostream>
-
-#include "StringFactory.hpp"
+#include "Queue.hpp"
+//#include "StringFactory.hpp"
 using namespace std;
-
-//Wanna hear a joke about construction?
 
 int main()
 {
+    Queue* myStuff = new Queue();
     char s[] = "428 + 12 - 67 / 862 - 5 + 42";
     char* delims = " ";
-    
+    char* tempString;
 
-    LinkedList* ll = new LinkedList();
+    tempString = strtok(s, delims);
+    do
+    {
+        myStuff->Enqueue(tempString);
+        tempString = strtok(NULL, " ");
+    } while (tempString);
 
-    StringFactory::split(ll, s, delims);
-  
-    ll->display();
-  
+    myStuff->DisplayQueue();
 }
-
-//Sorry, I'm still working on it...
