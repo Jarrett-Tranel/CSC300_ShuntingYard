@@ -1,4 +1,6 @@
 #include<iostream>
+#ifndef Node_hpp
+#define Node_hpp
 using namespace std;
 
 class Node
@@ -14,3 +16,5 @@ class Node
         Node* nextNode;
 
 };
+
+#endif

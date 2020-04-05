@@ -9,6 +9,11 @@ Queue::Queue()
     this->tail = 0;
 }
 
+int Queue::getCount()
+{
+    return elements;
+}
+
 //add to end
 void Queue::Enqueue(string endElement)
 {
@@ -16,7 +21,6 @@ void Queue::Enqueue(string endElement)
     if(!this->head)
     {
         this->head = newNode;
-        this->elements++;
     }
     else
     {
@@ -40,7 +44,7 @@ string Queue::Dequeue()
 void Queue::DisplayQueue()
 {
     Node* currNode = this->head;
-    for(int i = 0; i<this->elements-1; i++)
+    for(int i = 0; i<this->elements; i++)
     {
         std::cout<<currNode->getPayload()<<"\n";
         currNode = currNode->getNextNode();

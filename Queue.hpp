@@ -1,4 +1,6 @@
 #include <iostream>
+#ifndef Queue_hpp
+#define Queue_hpp
 #include "Node.hpp"
 using namespace std;
 
@@ -20,8 +22,10 @@ class Queue
 
         //remove from front
         string Dequeue();
+        int getCount();
 
         void DisplayQueue();
 
 };
 
+#endif 
